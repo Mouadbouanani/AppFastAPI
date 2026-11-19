@@ -66,10 +66,10 @@ jobs:
           tags: |
             ${{env.IMAGE_NAME}}:latest
             ${{env.IMAGE_NAME}}:${{github.sha}}
-      - name: Declencher le redploiement
-        env:
-          DEPLOY_HOOK: ${{secrets.DEPLOY_HOOK_URL}}
-        run: curl --fail --silent -X POST "$DEPLOY_HOOK"
+#     - name: Declencher le redploiement
+#        env:
+#         DEPLOY_HOOK: ${{secrets.DEPLOY_HOOK_URL}}
+#        run: curl --fail --silent -X POST "$DEPLOY_HOOK"
     
 
 
