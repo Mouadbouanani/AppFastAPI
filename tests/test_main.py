@@ -24,3 +24,9 @@ def test_create_and_list_task():
 def test_get_task_not_found():
     response = client.get("/tasks/999")
     assert response.status_code == 404
+
+
+def test_health():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
